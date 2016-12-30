@@ -4,7 +4,7 @@
   <packaging>eclipse-plugin</packaging>
   <parent>
   	<groupId>org.nasdanika.story</groupId>
-  	<artifactId>org.nasdanika.parent</artifactId>
+  	<artifactId>org.nasdanika.story.parent</artifactId>
   	<version>0.1.0-SNAPSHOT</version>
   	<relativePath>../org.nasdanika.story.parent</relativePath>
   </parent>
