@@ -985,22 +985,21 @@ public class StoryEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), StoryEditor.this) {
-						@Override
-						public Viewer createViewer(Composite composite) {
-							Tree tree = new Tree(composite, SWT.MULTI);
-							TreeViewer newTreeViewer = new TreeViewer(tree);
-							return newTreeViewer;
-						}
-						@Override
-						public void requestActivation() {
-							super.requestActivation();
-							setCurrentViewerPane(this);
-						}
-					};
+						new ViewerPane(getSite().getPage(), StoryEditor.this) {
+							@Override
+							public Viewer createViewer(Composite composite) {
+								MasterDetailForm masterDetailForm = new MasterDetailForm(composite, SWT.NONE);
+								return new MasterDetailViewer(masterDetailForm);
+							}
+							@Override
+							public void requestActivation() {
+								super.requestActivation();
+								setCurrentViewerPane(this);
+							}
+						};
 				viewerPane.createControl(getContainer());
 
-				selectionViewer = (TreeViewer)viewerPane.getViewer();
+				selectionViewer = ((MasterDetailViewer) viewerPane.getViewer()).getTreeViewer();
 				selectionViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
 
 				selectionViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
