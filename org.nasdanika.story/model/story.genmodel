@@ -55,15 +55,15 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference story.ecore#//Theme/children"/>
     </genClasses>
     <genClasses ecoreClass="story.ecore#//Story">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference story.ecore#//Story/protagonists"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute story.ecore#//Story/goal"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute story.ecore#//Story/benefit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute story.ecore#//Story/completed"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference story.ecore#//Story/scenarios"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference story.ecore#//Story/depends"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference story.ecore#//Story/themes"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference story.ecore#//Story/protagonists"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference story.ecore#//Story/conditionalprotagonists"/>
-      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute story.ecore#//Story/goal"/>
-      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute story.ecore#//Story/benefit"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference story.ecore#//Story/parameters"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute story.ecore#//Story/completed"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference story.ecore#//Story/realizes"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference story.ecore#//Story/startStates"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference story.ecore#//Story/endStates"/>

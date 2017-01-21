@@ -60,12 +60,12 @@ public class StoryItemProvider
 			addIdPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
-			addDependsPropertyDescriptor(object);
-			addThemesPropertyDescriptor(object);
 			addProtagonistsPropertyDescriptor(object);
 			addGoalPropertyDescriptor(object);
 			addBenefitPropertyDescriptor(object);
 			addCompletedPropertyDescriptor(object);
+			addDependsPropertyDescriptor(object);
+			addThemesPropertyDescriptor(object);
 			addRealizesPropertyDescriptor(object);
 			addStartStatesPropertyDescriptor(object);
 			addEndStatesPropertyDescriptor(object);
