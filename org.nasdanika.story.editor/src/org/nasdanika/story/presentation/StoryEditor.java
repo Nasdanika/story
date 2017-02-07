@@ -118,6 +118,8 @@ import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.PropertySheet;
 import org.eclipse.ui.views.properties.PropertySheetPage;
+import org.nasdanika.presentation.MasterDetailForm;
+import org.nasdanika.presentation.MasterDetailViewer;
 import org.nasdanika.story.provider.StoryItemProviderAdapterFactory;
 
 
@@ -970,7 +972,7 @@ public class StoryEditor
 	 * This is the method used by the framework to install your own controls.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public void createPages() {
