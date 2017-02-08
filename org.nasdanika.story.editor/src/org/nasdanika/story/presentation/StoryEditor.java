@@ -990,7 +990,7 @@ public class StoryEditor
 						new ViewerPane(getSite().getPage(), StoryEditor.this) {
 							@Override
 							public Viewer createViewer(Composite composite) {
-								MasterDetailForm masterDetailForm = new MasterDetailForm(composite, SWT.NONE);
+								MasterDetailForm masterDetailForm = new MasterDetailForm(composite, SWT.NONE, editingDomain);
 								return new MasterDetailViewer(masterDetailForm);
 							}
 							@Override
