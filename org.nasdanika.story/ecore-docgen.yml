@@ -1,0 +1,12 @@
+models:
+  - model/story.genmodel
+  
+output:
+  site: /org.nasdanika.story.repository/site/resources/modeldoc   
+
+apidocs:
+  - https://www.nasdanika.org/products/story/org.nasdanika.story/model/apidocs/
+  - http://download.eclipse.org/modeling/emf/emf/javadoc/2.11/
+  - https://docs.oracle.com/javase/8/docs/api/
+  
+  
