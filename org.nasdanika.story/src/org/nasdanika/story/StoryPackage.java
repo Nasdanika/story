@@ -1431,49 +1431,13 @@ public interface StoryPackage extends EPackage {
 	int STORY__STATES = STORY_BASE__STATES;
 
 	/**
-	 * The feature id for the '<em><b>Scenarios</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STORY__SCENARIOS = STORY_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Depends</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STORY__DEPENDS = STORY_BASE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Themes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STORY__THEMES = STORY_BASE_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Protagonists</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STORY__PROTAGONISTS = STORY_BASE_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Conditionalprotagonists</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STORY__CONDITIONALPROTAGONISTS = STORY_BASE_FEATURE_COUNT + 4;
+	int STORY__PROTAGONISTS = STORY_BASE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Goal</b></em>' attribute.
@@ -1482,7 +1446,7 @@ public interface StoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY__GOAL = STORY_BASE_FEATURE_COUNT + 5;
+	int STORY__GOAL = STORY_BASE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Benefit</b></em>' attribute.
@@ -1491,16 +1455,7 @@ public interface StoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY__BENEFIT = STORY_BASE_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STORY__PARAMETERS = STORY_BASE_FEATURE_COUNT + 7;
+	int STORY__BENEFIT = STORY_BASE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Completed</b></em>' attribute.
@@ -1509,7 +1464,52 @@ public interface StoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STORY__COMPLETED = STORY_BASE_FEATURE_COUNT + 8;
+	int STORY__COMPLETED = STORY_BASE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Scenarios</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORY__SCENARIOS = STORY_BASE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Depends</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORY__DEPENDS = STORY_BASE_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Themes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORY__THEMES = STORY_BASE_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Conditionalprotagonists</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORY__CONDITIONALPROTAGONISTS = STORY_BASE_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORY__PARAMETERS = STORY_BASE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Realizes</b></em>' reference list.

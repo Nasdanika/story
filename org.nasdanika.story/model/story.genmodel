@@ -4,8 +4,7 @@
     modelName="Story" rootExtendsInterface="org.eclipse.emf.cdo.CDOObject" rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl"
     importerID="org.eclipse.emf.importer.cdo" featureDelegation="Dynamic" complianceLevel="7.0"
     suppressGenModelAnnotations="false" copyrightFields="false" providerRootExtendsClass="org.nasdanika.story.provider.CDOItemProviderAdapterShim"
-    usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore" operationReflection="true"
-    importOrganizing="true" oSGiCompatible="true">
+    operationReflection="true" importOrganizing="true" oSGiCompatible="true">
   <foreignModel>story.ecore</foreignModel>
   <modelPluginVariables>CDO=org.eclipse.emf.cdo</modelPluginVariables>
   <genPackages prefix="Story" basePackage="org.nasdanika" disposableProviderFactory="true"
@@ -32,9 +31,7 @@
     <genClasses ecoreClass="story.ecore#//StoryContainer">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference story.ecore#//StoryContainer/stories"/>
     </genClasses>
-    <genClasses ecoreClass="story.ecore#//Protagonist">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference story.ecore#//Protagonist/linkTo"/>
-    </genClasses>
+    <genClasses ecoreClass="story.ecore#//Protagonist"/>
     <genClasses ecoreClass="story.ecore#//Role">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference story.ecore#//Role/subRoles"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference story.ecore#//Role/superRoles"/>

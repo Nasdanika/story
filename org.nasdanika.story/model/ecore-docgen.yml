@@ -1,0 +1,11 @@
+models:
+  - story.genmodel
+  
+output:
+  site: /org.nasdanika.story.repository/src/site/resources/modeldoc
+
+apidocs:
+  - https://docs.oracle.com/javase/8/docs/api/
+  - https://www.nasdanika.org/products/story/apidocs/model/
+    
+  

@@ -1,0 +1,689 @@
+
+<script>document.title="EClass Role";</script>
+<h2>
+<img src="resources/images/EClass.gif" style="margin-right:5px"/>Role</h2>
+<div style="margin-bottom:5px;font-family:monospace">org.nasdanika.story.Role</div>
+<div>
+  <ul class="nav nav-tabs">
+    <li class="active">
+      <a href="#nsd_1u3_tab_0" data-toggle="tab">Documentation</a>
+    </li>
+    <li>
+      <a href="#nsd_1u3_tab_1" data-toggle="tab">
+<img src="resources/images/EAttribute.gif" style="margin-right:5px"/> Attributes</a>
+    </li>
+    <li>
+      <a href="#nsd_1u3_tab_2" data-toggle="tab">
+<img src="resources/images/EReference.gif" style="margin-right:5px"/> References</a>
+    </li>
+    <li>
+      <a href="#nsd_1u3_tab_3" data-toggle="tab">
+<img src="resources/images/EOperation.gif" style="margin-right:5px"/> Operations</a>
+    </li>
+    <li>
+      <a href="#nsd_1u3_tab_4" data-toggle="tab">Supertypes</a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div id="nsd_1u3_tab_0" class="tab-pane active">
+      <div style="margin-top:10px;margin-bottom:10px" class="markdown-body"><p>Actor role.</p></div>
+      <img src="75726e3a6f72672e6e617364616e696b612e73746f7279/Role.png" usemap="#plantuml_map"/><map id="plantuml_map" name="plantuml_map">
+<area shape="rect" id="id1" href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Role.html" title="Actor role." alt="" coords="50,295,108,343"/>
+<area shape="rect" id="id2" href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Actor.html" title="Base interface for actors." alt="" coords="75,169,135,217"/>
+<area shape="rect" id="id3" href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Protagonist.html" title="Base interface representing the main character of a story. " alt="" coords="48,60,142,108"/>
+</map>
+</div>
+    <div id="nsd_1u3_tab_1" class="tab-pane">
+      <div id="nsd_1u4_accordion" role="tablist" class="panel-group">
+        <div class="panel panel-default">
+          <div role="tab" id="nsd_1u5_collapse_heading" class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#nsd_1u4_accordion" href="#nsd_1u5_collapse_collapse" aria-expanded="false" aria-controls="nsd_1u5_collapse_collapse"><b>description</b> : EString (CatalogElement)  - <I>Element description. </I></a>
+            </h4>
+          </div>
+          <div id="nsd_1u5_collapse_collapse" class="panel-collapse collapse">
+            <div id="nsd_1u5_collapse_panel_body" class="panel-body"><p>Element description. Supports markdown. Some catalog elements may hide description attribute.</p>
+              <table class="table table-bordered">
+                <tr>
+                  <th style="align:left">Declaring Type</th>
+                  <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/CatalogElement.html">
+<img src="resources/images/EClass.gif" style="margin-right:5px"/>CatalogElement</a></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Type</th>
+                  <td>
+<a href="#router/doc-content/687474703a2f2f7777772e65636c697073652e6f72672f656d662f323030322f45636f7265/EString.html">
+<img src="resources/images/EDataType.gif" style="margin-right:5px"/>EString</a></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Cardinality</th>
+                  <td>0..1</td>
+                </tr>
+                <tr>
+                  <th style="align:left">Default value</th>
+                  <td>
+                    <div style="white-space:pre;font-family:monospace"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Changeable</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Derived</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">ID</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Ordered</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Transient</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Unique</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Unsettable</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Volatile</th>
+                  <td></td>
+                </tr>
+              </table></div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div role="tab" id="nsd_1u6_collapse_heading" class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#nsd_1u4_accordion" href="#nsd_1u6_collapse_collapse" aria-expanded="false" aria-controls="nsd_1u6_collapse_collapse"><b>id</b> : EString (CatalogElement)  - <I>Catalog element identifier. </I></a>
+            </h4>
+          </div>
+          <div id="nsd_1u6_collapse_collapse" class="panel-collapse collapse">
+            <div id="nsd_1u6_collapse_panel_body" class="panel-body"><p>Catalog element identifier. The ID shall be unique for the element type in the containing resource, i.e. it is possible to have State and Scenario have the same ID, but two states or two scenarios shall not have duplicate ID&rsquo;s.</p>
+<p>If catalog element ID contains ${parent} token then the token is expanded to the parent element ID. If the parent element&rsquo;s id is blank, then token expansion fails and the element ID with the parent token is also considered blank. </p>
+              <table class="table table-bordered">
+                <tr>
+                  <th style="align:left">Declaring Type</th>
+                  <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/CatalogElement.html">
+<img src="resources/images/EClass.gif" style="margin-right:5px"/>CatalogElement</a></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Type</th>
+                  <td>
+<a href="#router/doc-content/687474703a2f2f7777772e65636c697073652e6f72672f656d662f323030322f45636f7265/EString.html">
+<img src="resources/images/EDataType.gif" style="margin-right:5px"/>EString</a></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Cardinality</th>
+                  <td>0..1</td>
+                </tr>
+                <tr>
+                  <th style="align:left">Default value</th>
+                  <td>
+                    <div style="white-space:pre;font-family:monospace"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Changeable</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Derived</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">ID</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Ordered</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Transient</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Unique</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Unsettable</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Volatile</th>
+                  <td></td>
+                </tr>
+              </table></div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div role="tab" id="nsd_1u7_collapse_heading" class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#nsd_1u4_accordion" href="#nsd_1u7_collapse_collapse" aria-expanded="false" aria-controls="nsd_1u7_collapse_collapse"><b>name</b> : EString (CatalogElement)  - <I>Element name.</I></a>
+            </h4>
+          </div>
+          <div id="nsd_1u7_collapse_collapse" class="panel-collapse collapse">
+            <div id="nsd_1u7_collapse_panel_body" class="panel-body"><p>Element name.</p>
+              <table class="table table-bordered">
+                <tr>
+                  <th style="align:left">Declaring Type</th>
+                  <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/CatalogElement.html">
+<img src="resources/images/EClass.gif" style="margin-right:5px"/>CatalogElement</a></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Type</th>
+                  <td>
+<a href="#router/doc-content/687474703a2f2f7777772e65636c697073652e6f72672f656d662f323030322f45636f7265/EString.html">
+<img src="resources/images/EDataType.gif" style="margin-right:5px"/>EString</a></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Cardinality</th>
+                  <td>0..1</td>
+                </tr>
+                <tr>
+                  <th style="align:left">Default value</th>
+                  <td>
+                    <div style="white-space:pre;font-family:monospace"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Changeable</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Derived</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">ID</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Ordered</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Transient</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Unique</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Unsettable</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Volatile</th>
+                  <td></td>
+                </tr>
+              </table></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="nsd_1u3_tab_2" class="tab-pane">
+      <div id="nsd_1u8_accordion" role="tablist" class="panel-group">
+        <div class="panel panel-default">
+          <div role="tab" id="nsd_1u9_collapse_heading" class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#nsd_1u8_accordion" href="#nsd_1u9_collapse_collapse" aria-expanded="false" aria-controls="nsd_1u9_collapse_collapse"><b>states</b> : State (StateContainer)  - <I>Story container may contain zero or more stories or epics.</I></a>
+            </h4>
+          </div>
+          <div id="nsd_1u9_collapse_collapse" class="panel-collapse collapse">
+            <div id="nsd_1u9_collapse_panel_body" class="panel-body"><p>Story container may contain zero or more stories or epics.</p>
+              <table class="table table-bordered">
+                <tr>
+                  <th style="align:left">Declaring Type</th>
+                  <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/StateContainer.html">
+<img src="resources/images/EClass.gif" style="margin-right:5px"/>StateContainer</a></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Type</th>
+                  <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/State.html">
+<img src="resources/images/EClass.gif" style="margin-right:5px"/>State</a></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Cardinality</th>
+                  <td>*</td>
+                </tr>
+                <tr>
+                  <th style="align:left">Default value</th>
+                  <td>
+                    <div style="white-space:pre;font-family:monospace"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Changeable</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Container</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Containment</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Derived</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">EKeys</th>
+                  <td>
+                    <ol></ol>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Opposite</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Ordered</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Resolve proxies</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Transient</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Unique</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Unsettable</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Volatile</th>
+                  <td></td>
+                </tr>
+              </table></div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div role="tab" id="nsd_1ua_collapse_heading" class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#nsd_1u8_accordion" href="#nsd_1ua_collapse_collapse" aria-expanded="false" aria-controls="nsd_1ua_collapse_collapse"><b>stories</b> : StoryBase (StoryContainer)  - <I>Story container may contain zero or more stories or epics.</I></a>
+            </h4>
+          </div>
+          <div id="nsd_1ua_collapse_collapse" class="panel-collapse collapse">
+            <div id="nsd_1ua_collapse_panel_body" class="panel-body"><p>Story container may contain zero or more stories or epics.</p>
+              <table class="table table-bordered">
+                <tr>
+                  <th style="align:left">Declaring Type</th>
+                  <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/StoryContainer.html">
+<img src="resources/images/EClass.gif" style="margin-right:5px"/>StoryContainer</a></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Type</th>
+                  <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/StoryBase.html">
+<img src="resources/images/EClass.gif" style="margin-right:5px"/>StoryBase</a></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Cardinality</th>
+                  <td>*</td>
+                </tr>
+                <tr>
+                  <th style="align:left">Default value</th>
+                  <td>
+                    <div style="white-space:pre;font-family:monospace"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Changeable</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Container</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Containment</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Derived</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">EKeys</th>
+                  <td>
+                    <ol></ol>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Opposite</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Ordered</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Resolve proxies</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Transient</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Unique</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Unsettable</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Volatile</th>
+                  <td></td>
+                </tr>
+              </table></div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div role="tab" id="nsd_1ub_collapse_heading" class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#nsd_1u8_accordion" href="#nsd_1ub_collapse_collapse" aria-expanded="false" aria-controls="nsd_1ub_collapse_collapse"><b>subRoles</b> : Role - <I>A role may contain zero or more sub-roles. </I></a>
+            </h4>
+          </div>
+          <div id="nsd_1ub_collapse_collapse" class="panel-collapse collapse">
+            <div id="nsd_1ub_collapse_panel_body" class="panel-body"><p>A role may contain zero or more sub-roles. Sub-roles inherit super-role stories.</p>
+              <table class="table table-bordered">
+                <tr>
+                  <th style="align:left">Type</th>
+                  <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Role.html">
+<img src="resources/images/EClass.gif" style="margin-right:5px"/>Role</a></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Cardinality</th>
+                  <td>*</td>
+                </tr>
+                <tr>
+                  <th style="align:left">Default value</th>
+                  <td>
+                    <div style="white-space:pre;font-family:monospace"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Changeable</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Container</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Containment</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Derived</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">EKeys</th>
+                  <td>
+                    <ol></ol>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Opposite</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Ordered</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Resolve proxies</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Transient</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Unique</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Unsettable</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Volatile</th>
+                  <td></td>
+                </tr>
+              </table></div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div role="tab" id="nsd_1uc_collapse_heading" class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#nsd_1u8_accordion" href="#nsd_1uc_collapse_collapse" aria-expanded="false" aria-controls="nsd_1uc_collapse_collapse"><b>superRoles</b> : Role - <I>A role may reference zero or more roles as its super-roles. </I></a>
+            </h4>
+          </div>
+          <div id="nsd_1uc_collapse_collapse" class="panel-collapse collapse">
+            <div id="nsd_1uc_collapse_panel_body" class="panel-body"><p>A role may reference zero or more roles as its super-roles. The role inherits super-role stories.</p>
+              <table class="table table-bordered">
+                <tr>
+                  <th style="align:left">Type</th>
+                  <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Role.html">
+<img src="resources/images/EClass.gif" style="margin-right:5px"/>Role</a></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Cardinality</th>
+                  <td>*</td>
+                </tr>
+                <tr>
+                  <th style="align:left">Default value</th>
+                  <td>
+                    <div style="white-space:pre;font-family:monospace"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Changeable</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Container</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Containment</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Derived</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">EKeys</th>
+                  <td>
+                    <ol></ol>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Opposite</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Ordered</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Resolve proxies</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Transient</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Unique</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Unsettable</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Volatile</th>
+                  <td></td>
+                </tr>
+              </table></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="nsd_1u3_tab_3" class="tab-pane">
+      <div id="nsd_1ud_accordion" role="tablist" class="panel-group">
+        <div class="panel panel-default">
+          <div role="tab" id="nsd_1ue_collapse_heading" class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#nsd_1ud_accordion" href="#nsd_1ue_collapse_collapse" aria-expanded="false" aria-controls="nsd_1ue_collapse_collapse"><b>validate</b> : EBoolean (CatalogElement)  - <I>Validates element for execution/generation. </I></a>
+            </h4>
+          </div>
+          <div id="nsd_1ue_collapse_collapse" class="panel-collapse collapse">
+            <div id="nsd_1ue_collapse_panel_body" class="panel-body"><p>Validates element for execution/generation. Adds messages to diagnostics and </p>
+              <table class="table table-bordered">
+                <tr>
+                  <th style="align:left">Declaring Type</th>
+                  <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/CatalogElement.html">
+<img src="resources/images/EClass.gif" style="margin-right:5px"/>CatalogElement</a></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Type</th>
+                  <td>
+<a href="#router/doc-content/687474703a2f2f7777772e65636c697073652e6f72672f656d662f323030322f45636f7265/EBoolean.html">
+<img src="resources/images/EDataType.gif" style="margin-right:5px"/>EBoolean</a></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Cardinality</th>
+                  <td>0..1</td>
+                </tr>
+                <tr>
+                  <th style="align:left">Exceptions</th>
+                  <td>
+                    <ul></ul>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Unique</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+              </table>
+              <h3>Parameters</h3>
+              <h4>diagnostics : 
+<a href="#router/doc-content/687474703a2f2f7777772e65636c697073652e6f72672f656d662f323030322f45636f7265/EDiagnosticChain.html">
+<img src="resources/images/EDataType.gif" style="margin-right:5px"/>EDiagnosticChain</a> 0..1</h4>
+              <div style="margin-top:10px;margin-bottom:20px" class="markdown-body"><p>Diagnostics to add validation messages to.</p></div>
+              <h4>context : 
+<a href="#router/doc-content/687474703a2f2f7777772e65636c697073652e6f72672f656d662f323030322f45636f7265/EMap.html">
+<img src="resources/images/EDataType.gif" style="margin-right:5px"/>EMap</a> 0..1</h4>
+              <div style="margin-top:10px;margin-bottom:20px" class="markdown-body"><p>Validation context.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="nsd_1u3_tab_4" class="tab-pane">
+      <table class="table table-bordered">
+        <tr class="info">
+          <th>Name</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Protagonist.html">Protagonist</a></td>
+          <td>Base interface representing the main character of a story. </td>
+        </tr>
+      </table>
+    </div></div>
+</div>

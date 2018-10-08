@@ -1,2 +1,3 @@
 # Story
-User story model and editor
+
+See [site](https://www.nasdanika.org/products/story/index.html).

@@ -1,0 +1,312 @@
+
+<script>document.title="EClass CatalogElement";</script>
+<h2>
+<img src="resources/images/EClass.gif" style="margin-right:5px"/><I>CatalogElement</I></h2>
+<div style="margin-bottom:5px;font-family:monospace">org.nasdanika.story.CatalogElement</div>
+<div>
+  <ul class="nav nav-tabs">
+    <li class="active">
+      <a href="#nsd_1sj_tab_0" data-toggle="tab">Documentation</a>
+    </li>
+    <li>
+      <a href="#nsd_1sj_tab_1" data-toggle="tab">
+<img src="resources/images/EAttribute.gif" style="margin-right:5px"/> Attributes</a>
+    </li>
+    <li>
+      <a href="#nsd_1sj_tab_2" data-toggle="tab">
+<img src="resources/images/EOperation.gif" style="margin-right:5px"/> Operations</a>
+    </li>
+    <li>
+      <a href="#nsd_1sj_tab_3" data-toggle="tab">Subtypes</a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div id="nsd_1sj_tab_0" class="tab-pane active">
+      <div style="margin-top:10px;margin-bottom:10px" class="markdown-body"><p>Base interface for model elements which can be added to a catalog.</p></div>
+      <img src="75726e3a6f72672e6e617364616e696b612e73746f7279/CatalogElement.png" usemap="#plantuml_map"/><map id="plantuml_map" name="plantuml_map">
+<area shape="rect" id="id1" href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/State.html" title="Interaction state, e.g. a web page. " alt="" coords="303,367,363,415"/>
+<area shape="rect" id="id2" href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Theme.html" title="Theme is a cross-cutting concern, e.g. performance." alt="" coords="38,241,109,289"/>
+<area shape="rect" id="id3" href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Catalog.html" title="Generic container for Stories, Actors, Roles, Epics, Themes, …" alt="" coords="369,241,444,289"/>
+<area shape="rect" id="id4" href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/StateContainer.html" title="Container of states." alt="" coords="220,241,334,289"/>
+<area shape="rect" id="id5" href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/CatalogElement.html" title="Base interface for model elements which can be added to a catalog." alt="" coords="172,60,482,163"/>
+</map>
+</div>
+    <div id="nsd_1sj_tab_1" class="tab-pane">
+      <div id="nsd_1sk_accordion" role="tablist" class="panel-group">
+        <div class="panel panel-default">
+          <div role="tab" id="nsd_1sl_collapse_heading" class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#nsd_1sk_accordion" href="#nsd_1sl_collapse_collapse" aria-expanded="false" aria-controls="nsd_1sl_collapse_collapse"><b>description</b> : EString - <I>Element description. </I></a>
+            </h4>
+          </div>
+          <div id="nsd_1sl_collapse_collapse" class="panel-collapse collapse">
+            <div id="nsd_1sl_collapse_panel_body" class="panel-body"><p>Element description. Supports markdown. Some catalog elements may hide description attribute.</p>
+              <table class="table table-bordered">
+                <tr>
+                  <th style="align:left">Type</th>
+                  <td>
+<a href="#router/doc-content/687474703a2f2f7777772e65636c697073652e6f72672f656d662f323030322f45636f7265/EString.html">
+<img src="resources/images/EDataType.gif" style="margin-right:5px"/>EString</a></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Cardinality</th>
+                  <td>0..1</td>
+                </tr>
+                <tr>
+                  <th style="align:left">Default value</th>
+                  <td>
+                    <div style="white-space:pre;font-family:monospace"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Changeable</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Derived</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">ID</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Ordered</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Transient</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Unique</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Unsettable</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Volatile</th>
+                  <td></td>
+                </tr>
+              </table></div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div role="tab" id="nsd_1sm_collapse_heading" class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#nsd_1sk_accordion" href="#nsd_1sm_collapse_collapse" aria-expanded="false" aria-controls="nsd_1sm_collapse_collapse"><b>id</b> : EString - <I>Catalog element identifier. </I></a>
+            </h4>
+          </div>
+          <div id="nsd_1sm_collapse_collapse" class="panel-collapse collapse">
+            <div id="nsd_1sm_collapse_panel_body" class="panel-body"><p>Catalog element identifier. The ID shall be unique for the element type in the containing resource, i.e. it is possible to have State and Scenario have the same ID, but two states or two scenarios shall not have duplicate ID&rsquo;s.</p>
+<p>If catalog element ID contains ${parent} token then the token is expanded to the parent element ID. If the parent element&rsquo;s id is blank, then token expansion fails and the element ID with the parent token is also considered blank. </p>
+              <table class="table table-bordered">
+                <tr>
+                  <th style="align:left">Type</th>
+                  <td>
+<a href="#router/doc-content/687474703a2f2f7777772e65636c697073652e6f72672f656d662f323030322f45636f7265/EString.html">
+<img src="resources/images/EDataType.gif" style="margin-right:5px"/>EString</a></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Cardinality</th>
+                  <td>0..1</td>
+                </tr>
+                <tr>
+                  <th style="align:left">Default value</th>
+                  <td>
+                    <div style="white-space:pre;font-family:monospace"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Changeable</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Derived</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">ID</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Ordered</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Transient</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Unique</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Unsettable</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Volatile</th>
+                  <td></td>
+                </tr>
+              </table></div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div role="tab" id="nsd_1sn_collapse_heading" class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#nsd_1sk_accordion" href="#nsd_1sn_collapse_collapse" aria-expanded="false" aria-controls="nsd_1sn_collapse_collapse"><b>name</b> : EString - <I>Element name.</I></a>
+            </h4>
+          </div>
+          <div id="nsd_1sn_collapse_collapse" class="panel-collapse collapse">
+            <div id="nsd_1sn_collapse_panel_body" class="panel-body"><p>Element name.</p>
+              <table class="table table-bordered">
+                <tr>
+                  <th style="align:left">Type</th>
+                  <td>
+<a href="#router/doc-content/687474703a2f2f7777772e65636c697073652e6f72672f656d662f323030322f45636f7265/EString.html">
+<img src="resources/images/EDataType.gif" style="margin-right:5px"/>EString</a></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Cardinality</th>
+                  <td>0..1</td>
+                </tr>
+                <tr>
+                  <th style="align:left">Default value</th>
+                  <td>
+                    <div style="white-space:pre;font-family:monospace"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Changeable</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Derived</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">ID</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Ordered</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Transient</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Unique</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Unsettable</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Volatile</th>
+                  <td></td>
+                </tr>
+              </table></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="nsd_1sj_tab_2" class="tab-pane">
+      <div id="nsd_1so_accordion" role="tablist" class="panel-group">
+        <div class="panel panel-default">
+          <div role="tab" id="nsd_1sp_collapse_heading" class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#nsd_1so_accordion" href="#nsd_1sp_collapse_collapse" aria-expanded="false" aria-controls="nsd_1sp_collapse_collapse"><b>validate</b> : EBoolean - <I>Validates element for execution/generation. </I></a>
+            </h4>
+          </div>
+          <div id="nsd_1sp_collapse_collapse" class="panel-collapse collapse">
+            <div id="nsd_1sp_collapse_panel_body" class="panel-body"><p>Validates element for execution/generation. Adds messages to diagnostics and </p>
+              <table class="table table-bordered">
+                <tr>
+                  <th style="align:left">Type</th>
+                  <td>
+<a href="#router/doc-content/687474703a2f2f7777772e65636c697073652e6f72672f656d662f323030322f45636f7265/EBoolean.html">
+<img src="resources/images/EDataType.gif" style="margin-right:5px"/>EBoolean</a></td>
+                </tr>
+                <tr>
+                  <th style="align:left">Cardinality</th>
+                  <td>0..1</td>
+                </tr>
+                <tr>
+                  <th style="align:left">Exceptions</th>
+                  <td>
+                    <ul></ul>
+                  </td>
+                </tr>
+                <tr>
+                  <th style="align:left">Unique</th>
+                  <td>
+                    <span class="glyphicon glyphicon-ok"></span>
+                  </td>
+                </tr>
+              </table>
+              <h3>Parameters</h3>
+              <h4>diagnostics : 
+<a href="#router/doc-content/687474703a2f2f7777772e65636c697073652e6f72672f656d662f323030322f45636f7265/EDiagnosticChain.html">
+<img src="resources/images/EDataType.gif" style="margin-right:5px"/>EDiagnosticChain</a> 0..1</h4>
+              <div style="margin-top:10px;margin-bottom:20px" class="markdown-body"><p>Diagnostics to add validation messages to.</p></div>
+              <h4>context : 
+<a href="#router/doc-content/687474703a2f2f7777772e65636c697073652e6f72672f656d662f323030322f45636f7265/EMap.html">
+<img src="resources/images/EDataType.gif" style="margin-right:5px"/>EMap</a> 0..1</h4>
+              <div style="margin-top:10px;margin-bottom:20px" class="markdown-body"><p>Validation context.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="nsd_1sj_tab_3" class="tab-pane">
+      <table class="table table-bordered">
+        <tr class="info">
+          <th>Name</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Theme.html">Theme</a></td>
+          <td>Theme is a cross-cutting concern, e.g. performance.</td>
+        </tr>
+        <tr>
+          <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/StateContainer.html">StateContainer</a></td>
+          <td>Container of states.</td>
+        </tr>
+        <tr>
+          <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Catalog.html">Catalog</a></td>
+          <td>Generic container for Stories, Actors, Roles, Epics, Themes, …</td>
+        </tr>
+        <tr>
+          <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/State.html">State</a></td>
+          <td>Interaction state, e.g. a web page. </td>
+        </tr>
+      </table>
+    </div></div>
+</div>

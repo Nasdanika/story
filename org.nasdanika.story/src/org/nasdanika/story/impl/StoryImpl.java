@@ -42,15 +42,15 @@ import org.nasdanika.story.util.StoryValidator;
  *   <li>{@link org.nasdanika.story.impl.StoryImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.nasdanika.story.impl.StoryImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.nasdanika.story.impl.StoryImpl#getStates <em>States</em>}</li>
+ *   <li>{@link org.nasdanika.story.impl.StoryImpl#getProtagonists <em>Protagonists</em>}</li>
+ *   <li>{@link org.nasdanika.story.impl.StoryImpl#getGoal <em>Goal</em>}</li>
+ *   <li>{@link org.nasdanika.story.impl.StoryImpl#getBenefit <em>Benefit</em>}</li>
+ *   <li>{@link org.nasdanika.story.impl.StoryImpl#isCompleted <em>Completed</em>}</li>
  *   <li>{@link org.nasdanika.story.impl.StoryImpl#getScenarios <em>Scenarios</em>}</li>
  *   <li>{@link org.nasdanika.story.impl.StoryImpl#getDepends <em>Depends</em>}</li>
  *   <li>{@link org.nasdanika.story.impl.StoryImpl#getThemes <em>Themes</em>}</li>
- *   <li>{@link org.nasdanika.story.impl.StoryImpl#getProtagonists <em>Protagonists</em>}</li>
  *   <li>{@link org.nasdanika.story.impl.StoryImpl#getConditionalprotagonists <em>Conditionalprotagonists</em>}</li>
- *   <li>{@link org.nasdanika.story.impl.StoryImpl#getGoal <em>Goal</em>}</li>
- *   <li>{@link org.nasdanika.story.impl.StoryImpl#getBenefit <em>Benefit</em>}</li>
  *   <li>{@link org.nasdanika.story.impl.StoryImpl#getParameters <em>Parameters</em>}</li>
- *   <li>{@link org.nasdanika.story.impl.StoryImpl#isCompleted <em>Completed</em>}</li>
  *   <li>{@link org.nasdanika.story.impl.StoryImpl#getRealizes <em>Realizes</em>}</li>
  *   <li>{@link org.nasdanika.story.impl.StoryImpl#getStartStates <em>Start States</em>}</li>
  *   <li>{@link org.nasdanika.story.impl.StoryImpl#getEndStates <em>End States</em>}</li>
@@ -422,24 +422,24 @@ public class StoryImpl extends CDOObjectImpl implements Story {
 				return getDescription();
 			case StoryPackage.STORY__STATES:
 				return getStates();
+			case StoryPackage.STORY__PROTAGONISTS:
+				return getProtagonists();
+			case StoryPackage.STORY__GOAL:
+				return getGoal();
+			case StoryPackage.STORY__BENEFIT:
+				return getBenefit();
+			case StoryPackage.STORY__COMPLETED:
+				return isCompleted();
 			case StoryPackage.STORY__SCENARIOS:
 				return getScenarios();
 			case StoryPackage.STORY__DEPENDS:
 				return getDepends();
 			case StoryPackage.STORY__THEMES:
 				return getThemes();
-			case StoryPackage.STORY__PROTAGONISTS:
-				return getProtagonists();
 			case StoryPackage.STORY__CONDITIONALPROTAGONISTS:
 				return getConditionalprotagonists();
-			case StoryPackage.STORY__GOAL:
-				return getGoal();
-			case StoryPackage.STORY__BENEFIT:
-				return getBenefit();
 			case StoryPackage.STORY__PARAMETERS:
 				return getParameters();
-			case StoryPackage.STORY__COMPLETED:
-				return isCompleted();
 			case StoryPackage.STORY__REALIZES:
 				return getRealizes();
 			case StoryPackage.STORY__START_STATES:
@@ -472,6 +472,19 @@ public class StoryImpl extends CDOObjectImpl implements Story {
 				getStates().clear();
 				getStates().addAll((Collection<? extends State>)newValue);
 				return;
+			case StoryPackage.STORY__PROTAGONISTS:
+				getProtagonists().clear();
+				getProtagonists().addAll((Collection<? extends Protagonist>)newValue);
+				return;
+			case StoryPackage.STORY__GOAL:
+				setGoal((String)newValue);
+				return;
+			case StoryPackage.STORY__BENEFIT:
+				setBenefit((String)newValue);
+				return;
+			case StoryPackage.STORY__COMPLETED:
+				setCompleted((Boolean)newValue);
+				return;
 			case StoryPackage.STORY__SCENARIOS:
 				getScenarios().clear();
 				getScenarios().addAll((Collection<? extends Scenario>)newValue);
@@ -484,26 +497,13 @@ public class StoryImpl extends CDOObjectImpl implements Story {
 				getThemes().clear();
 				getThemes().addAll((Collection<? extends Theme>)newValue);
 				return;
-			case StoryPackage.STORY__PROTAGONISTS:
-				getProtagonists().clear();
-				getProtagonists().addAll((Collection<? extends Protagonist>)newValue);
-				return;
 			case StoryPackage.STORY__CONDITIONALPROTAGONISTS:
 				getConditionalprotagonists().clear();
 				getConditionalprotagonists().addAll((Collection<? extends ConditionalProtagonist>)newValue);
 				return;
-			case StoryPackage.STORY__GOAL:
-				setGoal((String)newValue);
-				return;
-			case StoryPackage.STORY__BENEFIT:
-				setBenefit((String)newValue);
-				return;
 			case StoryPackage.STORY__PARAMETERS:
 				getParameters().clear();
 				getParameters().addAll((Collection<? extends Parameter>)newValue);
-				return;
-			case StoryPackage.STORY__COMPLETED:
-				setCompleted((Boolean)newValue);
 				return;
 			case StoryPackage.STORY__REALIZES:
 				getRealizes().clear();
@@ -541,6 +541,18 @@ public class StoryImpl extends CDOObjectImpl implements Story {
 			case StoryPackage.STORY__STATES:
 				getStates().clear();
 				return;
+			case StoryPackage.STORY__PROTAGONISTS:
+				getProtagonists().clear();
+				return;
+			case StoryPackage.STORY__GOAL:
+				setGoal(GOAL_EDEFAULT);
+				return;
+			case StoryPackage.STORY__BENEFIT:
+				setBenefit(BENEFIT_EDEFAULT);
+				return;
+			case StoryPackage.STORY__COMPLETED:
+				setCompleted(COMPLETED_EDEFAULT);
+				return;
 			case StoryPackage.STORY__SCENARIOS:
 				getScenarios().clear();
 				return;
@@ -550,23 +562,11 @@ public class StoryImpl extends CDOObjectImpl implements Story {
 			case StoryPackage.STORY__THEMES:
 				getThemes().clear();
 				return;
-			case StoryPackage.STORY__PROTAGONISTS:
-				getProtagonists().clear();
-				return;
 			case StoryPackage.STORY__CONDITIONALPROTAGONISTS:
 				getConditionalprotagonists().clear();
 				return;
-			case StoryPackage.STORY__GOAL:
-				setGoal(GOAL_EDEFAULT);
-				return;
-			case StoryPackage.STORY__BENEFIT:
-				setBenefit(BENEFIT_EDEFAULT);
-				return;
 			case StoryPackage.STORY__PARAMETERS:
 				getParameters().clear();
-				return;
-			case StoryPackage.STORY__COMPLETED:
-				setCompleted(COMPLETED_EDEFAULT);
 				return;
 			case StoryPackage.STORY__REALIZES:
 				getRealizes().clear();
@@ -597,24 +597,24 @@ public class StoryImpl extends CDOObjectImpl implements Story {
 				return DESCRIPTION_EDEFAULT == null ? getDescription() != null : !DESCRIPTION_EDEFAULT.equals(getDescription());
 			case StoryPackage.STORY__STATES:
 				return !getStates().isEmpty();
+			case StoryPackage.STORY__PROTAGONISTS:
+				return !getProtagonists().isEmpty();
+			case StoryPackage.STORY__GOAL:
+				return GOAL_EDEFAULT == null ? getGoal() != null : !GOAL_EDEFAULT.equals(getGoal());
+			case StoryPackage.STORY__BENEFIT:
+				return BENEFIT_EDEFAULT == null ? getBenefit() != null : !BENEFIT_EDEFAULT.equals(getBenefit());
+			case StoryPackage.STORY__COMPLETED:
+				return isCompleted() != COMPLETED_EDEFAULT;
 			case StoryPackage.STORY__SCENARIOS:
 				return !getScenarios().isEmpty();
 			case StoryPackage.STORY__DEPENDS:
 				return !getDepends().isEmpty();
 			case StoryPackage.STORY__THEMES:
 				return !getThemes().isEmpty();
-			case StoryPackage.STORY__PROTAGONISTS:
-				return !getProtagonists().isEmpty();
 			case StoryPackage.STORY__CONDITIONALPROTAGONISTS:
 				return !getConditionalprotagonists().isEmpty();
-			case StoryPackage.STORY__GOAL:
-				return GOAL_EDEFAULT == null ? getGoal() != null : !GOAL_EDEFAULT.equals(getGoal());
-			case StoryPackage.STORY__BENEFIT:
-				return BENEFIT_EDEFAULT == null ? getBenefit() != null : !BENEFIT_EDEFAULT.equals(getBenefit());
 			case StoryPackage.STORY__PARAMETERS:
 				return !getParameters().isEmpty();
-			case StoryPackage.STORY__COMPLETED:
-				return isCompleted() != COMPLETED_EDEFAULT;
 			case StoryPackage.STORY__REALIZES:
 				return !getRealizes().isEmpty();
 			case StoryPackage.STORY__START_STATES:

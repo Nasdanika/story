@@ -1,0 +1,150 @@
+
+<script>document.title="EPackage story";</script>
+<h2>
+  <img src="resources/images/EPackage.gif" style="margin-right:5px"/>story</h2>
+<div><B>Namespace URI:</B> urn:org.nasdanika.story</div>
+<div>
+  <ul class="nav nav-tabs">
+    <li class="active">
+      <a href="#nsd_1xo_tab_0" data-toggle="tab">Documentation</a>
+    </li>
+    <li>
+      <a href="#nsd_1xo_tab_1" data-toggle="tab">
+<img src="resources/images/EClass.gif" style="margin-right:5px"/> Classes</a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div id="nsd_1xo_tab_0" class="tab-pane active">
+      <div style="margin-top:10px;margin-bottom:10px" class="markdown-body"><p>Story model allows to capture agile (user) stories in the form of a model which can reference the domain model and be linked to the domain model, e.g. route operations may reference user stories they are used by. The story model can be used for documentation, to link test results to acceptance criteria (also as part of online documentation), and for story-based entitlements - operations reference stories, and users are granted entitlements execute stories, or users are granted roles, which in turn are linked to stories.</p></div>
+      <img src="75726e3a6f72672e6e617364616e696b612e73746f7279/package-summary.png" usemap="#plantuml_map"/><map id="plantuml_map" name="plantuml_map">
+<area shape="rect" id="id1" href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Epic.html" title="Epic is used to group stories." alt="" coords="411,715,467,763"/>
+<area shape="rect" id="id2" href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Role.html" title="Actor role." alt="" coords="241,1337,299,1385"/>
+<area shape="rect" id="id3" href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/User.html" title="A human actor." alt="" coords="38,1337,97,1385"/>
+<area shape="rect" id="id4" href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/State.html" title="Interaction state, e.g. a web page. " alt="" coords="770,1211,830,1259"/>
+<area shape="rect" id="id5" href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Actor.html" title="Base interface for actors." alt="" coords="53,1211,113,1259"/>
+<area shape="rect" id="id6" href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Theme.html" title="Theme is a cross-cutting concern, e.g. performance." alt="" coords="772,883,843,931"/>
+<area shape="rect" id="id7" href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/System.html" title="A system actor." alt="" coords="132,1337,205,1385"/>
+<area shape="rect" id="id8" href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Catalog.html" title="Generic container for Stories, Actors, Roles, Epics, Themes, …" alt="" coords="799,60,874,108"/>
+<area shape="rect" id="id9" href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/StoryBase.html" title="Base interface for stories and epics" alt="" coords="495,585,583,633"/>
+<area shape="rect" id="id10" href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Protagonist.html" title="Base interface representing the main character of a story. " alt="" coords="194,1057,288,1105"/>
+<area shape="rect" id="id11" href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Persona.html" title="Agile persona." alt="" coords="306,1446,385,1507"/>
+<area shape="rect" id="id12" href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/StoryContainer.html" title="Container of stories." alt="" coords="390,459,504,507"/>
+<area shape="rect" id="id13" href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/StateContainer.html" title="Container of states." alt="" coords="662,350,776,398"/>
+<area shape="rect" id="id14" href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Goal.html" title="Persona’s goal." alt="" coords="435,1586,509,1661"/>
+<area shape="rect" id="id15" href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Scenario.html" title="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Scenario.html" alt="" coords="579,862,663,951"/>
+<area shape="rect" id="id16" href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Parameter.html" title="Story parameter" alt="" coords="75,862,171,951"/>
+<area shape="rect" id="id17" href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Story.html" title="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Story.html" alt="" coords="502,694,604,783"/>
+<area shape="rect" id="id18" href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/ConditionalProtagonist.html" title="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/ConditionalProtagonist.html" alt="" coords="349,876,507,937"/>
+<area shape="rect" id="id19" href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Step.html" title="Scenario step." alt="" coords="575,1030,671,1133"/>
+<area shape="rect" id="id20" href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/CatalogElement.html" title="Base interface for model elements which can be added to a catalog." alt="" coords="683,186,993,289"/>
+</map>
+</div>
+    <div id="nsd_1xo_tab_1" class="tab-pane">
+      <table class="table table-bordered">
+        <tr class="info">
+          <th>Name</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Actor.html">Actor</a></td>
+          <td>Base interface for actors.</td>
+        </tr>
+        <tr>
+          <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Catalog.html">Catalog</a></td>
+          <td>Generic container for Stories, Actors, Roles, Epics, Themes, …</td>
+        </tr>
+        <tr>
+          <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/CatalogElement.html">CatalogElement</a></td>
+          <td>Base interface for model elements which can be added to a catalog.</td>
+        </tr>
+        <tr>
+          <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/ConditionalProtagonist.html">ConditionalProtagonist</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Epic.html">Epic</a></td>
+          <td>Epic is used to group stories.</td>
+        </tr>
+        <tr>
+          <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Goal.html">Goal</a></td>
+          <td>Persona’s goal.</td>
+        </tr>
+        <tr>
+          <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Parameter.html">Parameter</a></td>
+          <td>Story parameter</td>
+        </tr>
+        <tr>
+          <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Persona.html">Persona</a></td>
+          <td>Agile persona.</td>
+        </tr>
+        <tr>
+          <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Protagonist.html">Protagonist</a></td>
+          <td>Base interface representing the main character of a story. </td>
+        </tr>
+        <tr>
+          <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Role.html">Role</a></td>
+          <td>Actor role.</td>
+        </tr>
+        <tr>
+          <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Scenario.html">Scenario</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/State.html">State</a></td>
+          <td>Interaction state, e.g. a web page. </td>
+        </tr>
+        <tr>
+          <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/StateContainer.html">StateContainer</a></td>
+          <td>Container of states.</td>
+        </tr>
+        <tr>
+          <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Step.html">Step</a></td>
+          <td>Scenario step.</td>
+        </tr>
+        <tr>
+          <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Story.html">Story</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/StoryBase.html">StoryBase</a></td>
+          <td>Base interface for stories and epics</td>
+        </tr>
+        <tr>
+          <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/StoryContainer.html">StoryContainer</a></td>
+          <td>Container of stories.</td>
+        </tr>
+        <tr>
+          <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/System.html">System</a></td>
+          <td>A system actor.</td>
+        </tr>
+        <tr>
+          <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/Theme.html">Theme</a></td>
+          <td>Theme is a cross-cutting concern, e.g. performance.</td>
+        </tr>
+        <tr>
+          <td>
+<a href="#router/doc-content/75726e3a6f72672e6e617364616e696b612e73746f7279/User.html">User</a></td>
+          <td>A human actor.</td>
+        </tr>
+      </table>
+    </div></div>
+</div>

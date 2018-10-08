@@ -209,7 +209,7 @@ public class StoryPackageImpl extends EPackageImpl implements StoryPackage {
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link StoryPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -223,7 +223,8 @@ public class StoryPackageImpl extends EPackageImpl implements StoryPackage {
 		if (isInited) return (StoryPackage)EPackage.Registry.INSTANCE.getEPackage(StoryPackage.eNS_URI);
 
 		// Obtain or create and register package
-		StoryPackageImpl theStoryPackage = (StoryPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof StoryPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new StoryPackageImpl());
+		Object registeredStoryPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		StoryPackageImpl theStoryPackage = registeredStoryPackage instanceof StoryPackageImpl ? (StoryPackageImpl)registeredStoryPackage : new StoryPackageImpl();
 
 		isInited = true;
 
@@ -238,7 +239,7 @@ public class StoryPackageImpl extends EPackageImpl implements StoryPackage {
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
-			(theStoryPackage, 
+			(theStoryPackage,
 			 new EValidator.Descriptor() {
 				 public EValidator getEValidator() {
 					 return StoryValidator.INSTANCE;
@@ -248,7 +249,6 @@ public class StoryPackageImpl extends EPackageImpl implements StoryPackage {
 		// Mark meta-data to indicate it can't be changed
 		theStoryPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(StoryPackage.eNS_URI, theStoryPackage);
 		return theStoryPackage;
@@ -512,42 +512,6 @@ public class StoryPackageImpl extends EPackageImpl implements StoryPackage {
 	 * @generated
 	 */
 	public EReference getStory_Scenarios() {
-		return (EReference)storyEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getStory_Depends() {
-		return (EReference)storyEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getStory_Themes() {
-		return (EReference)storyEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getStory_Protagonists() {
-		return (EReference)storyEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getStory_Conditionalprotagonists() {
 		return (EReference)storyEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -556,8 +520,8 @@ public class StoryPackageImpl extends EPackageImpl implements StoryPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getStory_Goal() {
-		return (EAttribute)storyEClass.getEStructuralFeatures().get(5);
+	public EReference getStory_Depends() {
+		return (EReference)storyEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -565,8 +529,8 @@ public class StoryPackageImpl extends EPackageImpl implements StoryPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getStory_Benefit() {
-		return (EAttribute)storyEClass.getEStructuralFeatures().get(6);
+	public EReference getStory_Themes() {
+		return (EReference)storyEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -574,7 +538,16 @@ public class StoryPackageImpl extends EPackageImpl implements StoryPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStory_Parameters() {
+	public EReference getStory_Protagonists() {
+		return (EReference)storyEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getStory_Conditionalprotagonists() {
 		return (EReference)storyEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -583,8 +556,35 @@ public class StoryPackageImpl extends EPackageImpl implements StoryPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getStory_Goal() {
+		return (EAttribute)storyEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStory_Benefit() {
+		return (EAttribute)storyEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getStory_Parameters() {
+		return (EReference)storyEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getStory_Completed() {
-		return (EAttribute)storyEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)storyEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -940,15 +940,15 @@ public class StoryPackageImpl extends EPackageImpl implements StoryPackage {
 		createEReference(themeEClass, THEME__CHILDREN);
 
 		storyEClass = createEClass(STORY);
+		createEReference(storyEClass, STORY__PROTAGONISTS);
+		createEAttribute(storyEClass, STORY__GOAL);
+		createEAttribute(storyEClass, STORY__BENEFIT);
+		createEAttribute(storyEClass, STORY__COMPLETED);
 		createEReference(storyEClass, STORY__SCENARIOS);
 		createEReference(storyEClass, STORY__DEPENDS);
 		createEReference(storyEClass, STORY__THEMES);
-		createEReference(storyEClass, STORY__PROTAGONISTS);
 		createEReference(storyEClass, STORY__CONDITIONALPROTAGONISTS);
-		createEAttribute(storyEClass, STORY__GOAL);
-		createEAttribute(storyEClass, STORY__BENEFIT);
 		createEReference(storyEClass, STORY__PARAMETERS);
-		createEAttribute(storyEClass, STORY__COMPLETED);
 		createEReference(storyEClass, STORY__REALIZES);
 		createEReference(storyEClass, STORY__START_STATES);
 		createEReference(storyEClass, STORY__END_STATES);
@@ -1086,15 +1086,15 @@ public class StoryPackageImpl extends EPackageImpl implements StoryPackage {
 		initEReference(getTheme_Children(), this.getTheme(), null, "children", null, 0, -1, Theme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(storyEClass, Story.class, "Story", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getStory_Protagonists(), this.getProtagonist(), null, "protagonists", null, 0, -1, Story.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStory_Goal(), theEcorePackage.getEString(), "goal", null, 0, 1, Story.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStory_Benefit(), theEcorePackage.getEString(), "benefit", null, 0, 1, Story.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStory_Completed(), theEcorePackage.getEBoolean(), "completed", null, 0, 1, Story.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStory_Scenarios(), this.getScenario(), null, "scenarios", null, 0, -1, Story.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStory_Depends(), this.getStory(), null, "depends", null, 0, -1, Story.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStory_Themes(), this.getTheme(), null, "themes", null, 0, -1, Story.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStory_Protagonists(), this.getProtagonist(), null, "protagonists", null, 0, -1, Story.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStory_Conditionalprotagonists(), this.getConditionalProtagonist(), null, "conditionalprotagonists", null, 0, -1, Story.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStory_Goal(), theEcorePackage.getEString(), "goal", null, 0, 1, Story.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStory_Benefit(), theEcorePackage.getEString(), "benefit", null, 0, 1, Story.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStory_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, Story.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStory_Completed(), theEcorePackage.getEBoolean(), "completed", null, 0, 1, Story.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStory_Realizes(), this.getGoal(), null, "realizes", null, 0, -1, Story.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStory_StartStates(), this.getState(), null, "startStates", null, 0, -1, Story.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStory_EndStates(), this.getState(), null, "endStates", null, 0, -1, Story.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1143,360 +1143,360 @@ public class StoryPackageImpl extends EPackageImpl implements StoryPackage {
 	 * @generated
 	 */
 	protected void createGenModelAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/GenModel";	
+		String source = "http://www.eclipse.org/emf/2002/GenModel";
 		addAnnotation
-		  (this, 
-		   source, 
+		  (this,
+		   source,
 		   new String[] {
-			 "documentation", "Story model allows to capture agile (user) stories in the form of a model which can reference the domain model and be linked to the domain model, e.g. route operations may reference user stories they are used by. The story model can be used for documentation, to link test results to acceptance criteria (also as part of online documentation), and for story-based entitlements - operations reference stories, and users are granted entitlements execute stories, or users are granted roles, which in turn are linked to stories.\r\n"
-		   });	
+			   "documentation", "Story model allows to capture agile (user) stories in the form of a model which can reference the domain model and be linked to the domain model, e.g. route operations may reference user stories they are used by. The story model can be used for documentation, to link test results to acceptance criteria (also as part of online documentation), and for story-based entitlements - operations reference stories, and users are granted entitlements execute stories, or users are granted roles, which in turn are linked to stories.\r\n"
+		   });
 		addAnnotation
-		  (catalogEClass, 
-		   source, 
+		  (catalogEClass,
+		   source,
 		   new String[] {
-			 "documentation", "Generic container for [[Story|Stories]], [[Actor|Actors]], [[Role|Roles]], [[Epic|Epics]], [[Theme|Themes]], ..."
-		   });	
+			   "documentation", "Generic container for [[Story|Stories]], [[Actor|Actors]], [[Role|Roles]], [[Epic|Epics]], [[Theme|Themes]], ..."
+		   });
 		addAnnotation
-		  (getCatalog_Elements(), 
-		   source, 
+		  (getCatalog_Elements(),
+		   source,
 		   new String[] {
-			 "documentation", "Catalog elements."
-		   });	
+			   "documentation", "Catalog elements."
+		   });
 		addAnnotation
-		  (catalogElementEClass, 
-		   source, 
+		  (catalogElementEClass,
+		   source,
 		   new String[] {
-			 "documentation", "Base interface for model elements which can be added to a catalog."
-		   });	
+			   "documentation", "Base interface for model elements which can be added to a catalog."
+		   });
 		addAnnotation
-		  (getCatalogElement__Validate__DiagnosticChain_Map(), 
-		   source, 
+		  (getCatalogElement__Validate__DiagnosticChain_Map(),
+		   source,
 		   new String[] {
-			 "documentation", "Validates element for execution/generation. Adds messages to diagnostics and "
-		   });	
+			   "documentation", "Validates element for execution/generation. Adds messages to diagnostics and "
+		   });
 		addAnnotation
-		  ((getCatalogElement__Validate__DiagnosticChain_Map()).getEParameters().get(0), 
-		   source, 
+		  ((getCatalogElement__Validate__DiagnosticChain_Map()).getEParameters().get(0),
+		   source,
 		   new String[] {
-			 "documentation", "Diagnostics to add validation messages to."
-		   });	
+			   "documentation", "Diagnostics to add validation messages to."
+		   });
 		addAnnotation
-		  ((getCatalogElement__Validate__DiagnosticChain_Map()).getEParameters().get(1), 
-		   source, 
+		  ((getCatalogElement__Validate__DiagnosticChain_Map()).getEParameters().get(1),
+		   source,
 		   new String[] {
-			 "documentation", "Validation context."
-		   });	
+			   "documentation", "Validation context."
+		   });
 		addAnnotation
-		  (getCatalogElement_Id(), 
-		   source, 
+		  (getCatalogElement_Id(),
+		   source,
 		   new String[] {
-			 "documentation", "Catalog element identifier. The ID shall be unique for the element type in the\r\ncontaining resource, i.e. it is possible to have State and Scenario have the same ID,\r\nbut two states or two scenarios shall not have duplicate ID\'s.\r\n\r\nIf catalog element ID contains ${parent} token then the token\r\nis expanded to the parent element ID. If the parent element\'s id is blank, then token expansion fails and the element ID with the parent token is also considered blank.                         \r\n"
-		   });	
+			   "documentation", "Catalog element identifier. The ID shall be unique for the element type in the\r\ncontaining resource, i.e. it is possible to have State and Scenario have the same ID,\r\nbut two states or two scenarios shall not have duplicate ID\'s.\r\n\r\nIf catalog element ID contains ${parent} token then the token\r\nis expanded to the parent element ID. If the parent element\'s id is blank, then token expansion fails and the element ID with the parent token is also considered blank.                         \r\n"
+		   });
 		addAnnotation
-		  (getCatalogElement_Name(), 
-		   source, 
+		  (getCatalogElement_Name(),
+		   source,
 		   new String[] {
-			 "documentation", "Element name."
-		   });	
+			   "documentation", "Element name."
+		   });
 		addAnnotation
-		  (getCatalogElement_Description(), 
-		   source, 
+		  (getCatalogElement_Description(),
+		   source,
 		   new String[] {
-			 "documentation", "Element description. Supports markdown. Some catalog elements may hide description attribute."
-		   });	
+			   "documentation", "Element description. Supports markdown. Some catalog elements may hide description attribute."
+		   });
 		addAnnotation
-		  (stateEClass, 
-		   source, 
+		  (stateEClass,
+		   source,
 		   new String[] {
-			 "documentation", "Interaction state, e.g. a web page. \r\nScenarios transition from their start state(s) (context, \"given\") \r\nto the end state (oucome, \"then\").\r\n\r\nStates can be useful when multiple scenarios share start/end states - it allows to clearly identify shared states."
-		   });	
+			   "documentation", "Interaction state, e.g. a web page. \r\nScenarios transition from their start state(s) (context, \"given\") \r\nto the end state (oucome, \"then\").\r\n\r\nStates can be useful when multiple scenarios share start/end states - it allows to clearly identify shared states."
+		   });
 		addAnnotation
-		  (getState_SuperStates(), 
-		   source, 
+		  (getState_SuperStates(),
+		   source,
 		   new String[] {
-			 "documentation", "States may form a multiple-inheritance hierarchy. Sub-states inherit \r\ninbound and outbound transitions (scenarios) of super-states.\r\n\r\nFor example, if all customer pages feature the same menu with links to, say, \r\nCustomer Service page, then a BaseCustomerPage state can be created and\r\n\"Customer Service scenario\" will start from this abstract state instead of multiple\r\nconcrete states, e.g. Accounts Summary or Account Details pages.\r\n"
-		   });	
+			   "documentation", "States may form a multiple-inheritance hierarchy. Sub-states inherit \r\ninbound and outbound transitions (scenarios) of super-states.\r\n\r\nFor example, if all customer pages feature the same menu with links to, say, \r\nCustomer Service page, then a BaseCustomerPage state can be created and\r\n\"Customer Service scenario\" will start from this abstract state instead of multiple\r\nconcrete states, e.g. Accounts Summary or Account Details pages.\r\n"
+		   });
 		addAnnotation
-		  (stateContainerEClass, 
-		   source, 
+		  (stateContainerEClass,
+		   source,
 		   new String[] {
-			 "documentation", "Container of states."
-		   });	
+			   "documentation", "Container of states."
+		   });
 		addAnnotation
-		  (getStateContainer_States(), 
-		   source, 
+		  (getStateContainer_States(),
+		   source,
 		   new String[] {
-			 "documentation", "Story container may contain zero or more stories or epics."
-		   });	
+			   "documentation", "Story container may contain zero or more stories or epics."
+		   });
 		addAnnotation
-		  (storyBaseEClass, 
-		   source, 
+		  (storyBaseEClass,
+		   source,
 		   new String[] {
-			 "documentation", "Base interface for stories and epics"
-		   });	
+			   "documentation", "Base interface for stories and epics"
+		   });
 		addAnnotation
-		  (storyContainerEClass, 
-		   source, 
+		  (storyContainerEClass,
+		   source,
 		   new String[] {
-			 "documentation", "Container of stories."
-		   });	
+			   "documentation", "Container of stories."
+		   });
 		addAnnotation
-		  (getStoryContainer_Stories(), 
-		   source, 
+		  (getStoryContainer_Stories(),
+		   source,
 		   new String[] {
-			 "documentation", "Story container may contain zero or more stories or epics."
-		   });	
+			   "documentation", "Story container may contain zero or more stories or epics."
+		   });
 		addAnnotation
-		  (protagonistEClass, 
-		   source, 
+		  (protagonistEClass,
+		   source,
 		   new String[] {
-			 "documentation", "Base interface representing the main character of a story. Protagonists may contain stories, in this case the containing protagonist becomes an implicit protagonist of the contained stories."
-		   });	
+			   "documentation", "Base interface representing the main character of a story. Protagonists may contain stories, in this case the containing protagonist becomes an implicit protagonist of the contained stories."
+		   });
 		addAnnotation
-		  (getProtagonist_LinkTo(), 
-		   source, 
+		  (getProtagonist_LinkTo(),
+		   source,
 		   new String[] {
-			 "documentation", "Protagonist can be linked to EClass. In this case protagonist documentation is displayed as a tab in the EClass documentation and \r\nuser stories are mounted under the target EClass in the documentation tree."
-		   });	
+			   "documentation", "Protagonist can be linked to EClass. In this case protagonist documentation is displayed as a tab in the EClass documentation and \r\nuser stories are mounted under the target EClass in the documentation tree."
+		   });
 		addAnnotation
-		  (roleEClass, 
-		   source, 
+		  (roleEClass,
+		   source,
 		   new String[] {
-			 "documentation", "Actor role."
-		   });	
+			   "documentation", "Actor role."
+		   });
 		addAnnotation
-		  (getRole_SubRoles(), 
-		   source, 
+		  (getRole_SubRoles(),
+		   source,
 		   new String[] {
-			 "documentation", "A role may contain zero or more sub-roles. Sub-roles inherit super-role stories."
-		   });	
+			   "documentation", "A role may contain zero or more sub-roles. Sub-roles inherit super-role stories."
+		   });
 		addAnnotation
-		  (getRole_SuperRoles(), 
-		   source, 
+		  (getRole_SuperRoles(),
+		   source,
 		   new String[] {
-			 "documentation", "A role may reference zero or more roles as its super-roles. \r\nThe role inherits super-role stories."
-		   });	
+			   "documentation", "A role may reference zero or more roles as its super-roles. \r\nThe role inherits super-role stories."
+		   });
 		addAnnotation
-		  (actorEClass, 
-		   source, 
+		  (actorEClass,
+		   source,
 		   new String[] {
-			 "documentation", "Base interface for actors."
-		   });	
+			   "documentation", "Base interface for actors."
+		   });
 		addAnnotation
-		  (getActor_Roles(), 
-		   source, 
+		  (getActor_Roles(),
+		   source,
 		   new String[] {
-			 "documentation", "Actor can play zero or more roles."
-		   });	
+			   "documentation", "Actor can play zero or more roles."
+		   });
 		addAnnotation
-		  (getActor_SubActors(), 
-		   source, 
+		  (getActor_SubActors(),
+		   source,
 		   new String[] {
-			 "documentation", "Sub-actors may be contained by the super-actor to form a single-inheritance hierarchy. Multiple inheritance can be set up with superActors reference."
-		   });	
+			   "documentation", "Sub-actors may be contained by the super-actor to form a single-inheritance hierarchy. Multiple inheritance can be set up with superActors reference."
+		   });
 		addAnnotation
-		  (getActor_SuperActors(), 
-		   source, 
+		  (getActor_SuperActors(),
+		   source,
 		   new String[] {
-			 "documentation", "Actors form a multiple inheritance hierarchy and may have zero or more super-actors. All stories and roles played by by a super-actor are also played by its sub-actors."
-		   });	
+			   "documentation", "Actors form a multiple inheritance hierarchy and may have zero or more super-actors. All stories and roles played by by a super-actor are also played by its sub-actors."
+		   });
 		addAnnotation
-		  (userEClass, 
-		   source, 
+		  (userEClass,
+		   source,
 		   new String[] {
-			 "documentation", "A human actor."
-		   });	
+			   "documentation", "A human actor."
+		   });
 		addAnnotation
-		  (systemEClass, 
-		   source, 
+		  (systemEClass,
+		   source,
 		   new String[] {
-			 "documentation", "A system actor."
-		   });	
+			   "documentation", "A system actor."
+		   });
 		addAnnotation
-		  (personaEClass, 
-		   source, 
+		  (personaEClass,
+		   source,
 		   new String[] {
-			 "documentation", "Agile persona."
-		   });	
+			   "documentation", "Agile persona."
+		   });
 		addAnnotation
-		  (getPersona_Picture(), 
-		   source, 
+		  (getPersona_Picture(),
+		   source,
 		   new String[] {
-			 "documentation", "URL of the picture relative to the containing resource."
-		   });	
+			   "documentation", "URL of the picture relative to the containing resource."
+		   });
 		addAnnotation
-		  (getPersona_Goals(), 
-		   source, 
+		  (getPersona_Goals(),
+		   source,
 		   new String[] {
-			 "documentation", "A persona may have zero or more goals."
-		   });	
+			   "documentation", "A persona may have zero or more goals."
+		   });
 		addAnnotation
-		  (epicEClass, 
-		   source, 
+		  (epicEClass,
+		   source,
 		   new String[] {
-			 "documentation", "Epic is used to group stories."
-		   });	
+			   "documentation", "Epic is used to group stories."
+		   });
 		addAnnotation
-		  (themeEClass, 
-		   source, 
+		  (themeEClass,
+		   source,
 		   new String[] {
-			 "documentation", "Theme is a cross-cutting concern, e.g. performance."
-		   });	
+			   "documentation", "Theme is a cross-cutting concern, e.g. performance."
+		   });
 		addAnnotation
-		  (getTheme_Children(), 
-		   source, 
+		  (getTheme_Children(),
+		   source,
 		   new String[] {
-			 "documentation", "Themes can be organized into a hierarchy."
-		   });	
+			   "documentation", "Themes can be organized into a hierarchy."
+		   });
 		addAnnotation
-		  (getStory_Scenarios(), 
-		   source, 
+		  (getStory_Protagonists(),
+		   source,
 		   new String[] {
-			 "documentation", "A story may contain zero or more acceptance criteria."
-		   });	
+			   "documentation", "A story shall have at least one protagonist. If a story is played by multiple types of protagonists, more than one protagonist can be set for the story to obviate artificial generalization relationships between protagonists."
+		   });
 		addAnnotation
-		  (getStory_Depends(), 
-		   source, 
+		  (getStory_Goal(),
+		   source,
 		   new String[] {
-			 "documentation", "A story may depend (include, use) other user stories. E.g. ``edit`` user story may depend on ``view`` user story, \r\ni.e. a user need to view something first in order to edit it."
-		   });	
+			   "documentation", "Story goal (I want)."
+		   });
 		addAnnotation
-		  (getStory_Themes(), 
-		   source, 
+		  (getStory_Benefit(),
+		   source,
 		   new String[] {
-			 "documentation", "User story may be associated with zero or more themes."
-		   });	
+			   "documentation", "Story benefit (So that)."
+		   });
 		addAnnotation
-		  (getStory_Protagonists(), 
-		   source, 
+		  (getStory_Completed(),
+		   source,
 		   new String[] {
-			 "documentation", "A story shall have at least one protagonist. If a story is played by multiple types of protagonists, more than one protagonist can be set for the story to obviate artificial generalization relationships between protagonists."
-		   });	
+			   "documentation", "Completed flag."
+		   });
 		addAnnotation
-		  (getStory_Conditionalprotagonists(), 
-		   source, 
+		  (getStory_Scenarios(),
+		   source,
 		   new String[] {
-			 "documentation", "Some story protagonists may be defined as conditional. For example ``Approve credit application``\r\nstory may have a conditional protagonist with credit amount used in the condition."
-		   });	
+			   "documentation", "A story may contain zero or more acceptance criteria."
+		   });
 		addAnnotation
-		  (getStory_Goal(), 
-		   source, 
+		  (getStory_Depends(),
+		   source,
 		   new String[] {
-			 "documentation", "Story goal (I want)."
-		   });	
+			   "documentation", "A story may depend (include, use) other user stories. E.g. ``edit`` user story may depend on ``view`` user story, \r\ni.e. a user need to view something first in order to edit it."
+		   });
 		addAnnotation
-		  (getStory_Benefit(), 
-		   source, 
+		  (getStory_Themes(),
+		   source,
 		   new String[] {
-			 "documentation", "Story benefit (So that)."
-		   });	
+			   "documentation", "User story may be associated with zero or more themes."
+		   });
 		addAnnotation
-		  (getStory_Parameters(), 
-		   source, 
+		  (getStory_Conditionalprotagonists(),
+		   source,
 		   new String[] {
-			 "documentation", "A story may have parameters, e.g. ``Approve credit application`` story may have parameter ``creditAmount``."
-		   });	
+			   "documentation", "Some story protagonists may be defined as conditional. For example ``Approve credit application``\r\nstory may have a conditional protagonist with credit amount used in the condition."
+		   });
 		addAnnotation
-		  (getStory_Completed(), 
-		   source, 
+		  (getStory_Parameters(),
+		   source,
 		   new String[] {
-			 "documentation", "Completed flag."
-		   });	
+			   "documentation", "A story may have parameters, e.g. ``Approve credit application`` story may have parameter ``creditAmount``."
+		   });
 		addAnnotation
-		  (getStory_StartStates(), 
-		   source, 
+		  (getStory_StartStates(),
+		   source,
 		   new String[] {
-			 "documentation", "Start state(s) for the story. E.g. Home page for Sign-in story."
-		   });	
+			   "documentation", "Start state(s) for the story. E.g. Home page for Sign-in story."
+		   });
 		addAnnotation
-		  (getStory_EndStates(), 
-		   source, 
+		  (getStory_EndStates(),
+		   source,
 		   new String[] {
-			 "documentation", "End state(s) for the story. E.g. Accounts summary for Sign-in story."
-		   });	
+			   "documentation", "End state(s) for the story. E.g. Accounts summary for Sign-in story."
+		   });
 		addAnnotation
-		  (getScenario_Context(), 
-		   source, 
+		  (getScenario_Context(),
+		   source,
 		   new String[] {
-			 "documentation", "Context (Given)."
-		   });	
+			   "documentation", "Context (Given)."
+		   });
 		addAnnotation
-		  (getScenario_ContextStates(), 
-		   source, 
+		  (getScenario_ContextStates(),
+		   source,
 		   new String[] {
-			 "documentation", "Context (Given) state(s), i.e. a start state(s) from which the scenario transitions to the \r\noutcome (then) end state.\r\n\r\nThere can be more than one start state, e.g. two different pages with a link which\r\ninitiates the scenario. Where it makes sense it is recommended to create super-states\r\nfor states which are context/start states for the same scenario(s)."
-		   });	
+			   "documentation", "Context (Given) state(s), i.e. a start state(s) from which the scenario transitions to the \r\noutcome (then) end state.\r\n\r\nThere can be more than one start state, e.g. two different pages with a link which\r\ninitiates the scenario. Where it makes sense it is recommended to create super-states\r\nfor states which are context/start states for the same scenario(s)."
+		   });
 		addAnnotation
-		  (getScenario_Action(), 
-		   source, 
+		  (getScenario_Action(),
+		   source,
 		   new String[] {
-			 "documentation", "Action (when)."
-		   });	
+			   "documentation", "Action (when)."
+		   });
 		addAnnotation
-		  (getScenario_Outcome(), 
-		   source, 
+		  (getScenario_Outcome(),
+		   source,
 		   new String[] {
-			 "documentation", "Outcome (then)."
-		   });	
+			   "documentation", "Outcome (then)."
+		   });
 		addAnnotation
-		  (getScenario_OutcomeState(), 
-		   source, 
+		  (getScenario_OutcomeState(),
+		   source,
 		   new String[] {
-			 "documentation", "Outcome (then) state, i.e. the end state to which the scenario transitions from\r\n the context/given/start state."
-		   });	
+			   "documentation", "Outcome (then) state, i.e. the end state to which the scenario transitions from\r\n the context/given/start state."
+		   });
 		addAnnotation
-		  (stepEClass, 
-		   source, 
+		  (stepEClass,
+		   source,
 		   new String[] {
-			 "documentation", "Scenario step."
-		   });	
+			   "documentation", "Scenario step."
+		   });
 		addAnnotation
-		  (getStep_Name(), 
-		   source, 
+		  (getStep_Name(),
+		   source,
 		   new String[] {
-			 "documentation", "Step name."
-		   });	
+			   "documentation", "Step name."
+		   });
 		addAnnotation
-		  (getStep_Description(), 
-		   source, 
+		  (getStep_Description(),
+		   source,
 		   new String[] {
-			 "documentation", "Step description. Supports markdown. "
-		   });	
+			   "documentation", "Step description. Supports markdown. "
+		   });
 		addAnnotation
-		  (getStep_Condition(), 
-		   source, 
+		  (getStep_Condition(),
+		   source,
 		   new String[] {
-			 "documentation", "Optional step condition."
-		   });	
+			   "documentation", "Optional step condition."
+		   });
 		addAnnotation
-		  (getStep_Id(), 
-		   source, 
+		  (getStep_Id(),
+		   source,
 		   new String[] {
-			 "documentation", "Unique, in the containing resource, step identifier. \r\nIf ID contains ${parent} token then the token is expanded to the scenario ID. \r\nIf the scenario ID is blank, then token expansion fails and the \r\nstep ID with the parent token is also considered blank.                         \r\n"
-		   });	
+			   "documentation", "Unique, in the containing resource, step identifier. \r\nIf ID contains ${parent} token then the token is expanded to the scenario ID. \r\nIf the scenario ID is blank, then token expansion fails and the \r\nstep ID with the parent token is also considered blank.                         \r\n"
+		   });
 		addAnnotation
-		  (getConditionalProtagonist_Protagonist(), 
-		   source, 
+		  (getConditionalProtagonist_Protagonist(),
+		   source,
 		   new String[] {
-			 "documentation", "References one or more protagonists."
-		   });	
+			   "documentation", "References one or more protagonists."
+		   });
 		addAnnotation
-		  (getConditionalProtagonist_Condition(), 
-		   source, 
+		  (getConditionalProtagonist_Condition(),
+		   source,
 		   new String[] {
-			 "documentation", "Condition in JavaScript, e.g. amount<5000.00\r\n"
-		   });	
+			   "documentation", "Condition in JavaScript, e.g. amount<5000.00\r\n"
+		   });
 		addAnnotation
-		  (goalEClass, 
-		   source, 
+		  (goalEClass,
+		   source,
 		   new String[] {
-			 "documentation", "Persona\'s goal."
-		   });	
+			   "documentation", "Persona\'s goal."
+		   });
 		addAnnotation
-		  (parameterEClass, 
-		   source, 
+		  (parameterEClass,
+		   source,
 		   new String[] {
-			 "documentation", "Story parameter"
+			   "documentation", "Story parameter"
 		   });
 	}
 

@@ -13,15 +13,15 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.nasdanika.story.Story#getProtagonists <em>Protagonists</em>}</li>
+ *   <li>{@link org.nasdanika.story.Story#getGoal <em>Goal</em>}</li>
+ *   <li>{@link org.nasdanika.story.Story#getBenefit <em>Benefit</em>}</li>
+ *   <li>{@link org.nasdanika.story.Story#isCompleted <em>Completed</em>}</li>
  *   <li>{@link org.nasdanika.story.Story#getScenarios <em>Scenarios</em>}</li>
  *   <li>{@link org.nasdanika.story.Story#getDepends <em>Depends</em>}</li>
  *   <li>{@link org.nasdanika.story.Story#getThemes <em>Themes</em>}</li>
- *   <li>{@link org.nasdanika.story.Story#getProtagonists <em>Protagonists</em>}</li>
  *   <li>{@link org.nasdanika.story.Story#getConditionalprotagonists <em>Conditionalprotagonists</em>}</li>
- *   <li>{@link org.nasdanika.story.Story#getGoal <em>Goal</em>}</li>
- *   <li>{@link org.nasdanika.story.Story#getBenefit <em>Benefit</em>}</li>
  *   <li>{@link org.nasdanika.story.Story#getParameters <em>Parameters</em>}</li>
- *   <li>{@link org.nasdanika.story.Story#isCompleted <em>Completed</em>}</li>
  *   <li>{@link org.nasdanika.story.Story#getRealizes <em>Realizes</em>}</li>
  *   <li>{@link org.nasdanika.story.Story#getStartStates <em>Start States</em>}</li>
  *   <li>{@link org.nasdanika.story.Story#getEndStates <em>End States</em>}</li>
